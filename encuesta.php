@@ -1,0 +1,51 @@
+<?php
+session_start();
+require 'db_config.php';
+
+ $_SESSION['user_id'] = $_POST['user_id'] ?? null; // Obtener el ID del usuario de la sesión o del formulario
+
+
+
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Encuesta de Satisfacción</title>
+  <link rel="stylesheet" href="css\encuesta.css">
+</head>
+<body>
+
+  <div class="contenedor">
+    <h1>En general, ¿Cuál es su grado de satisfacción con su experiencia de servicio prestado?</h1>
+
+    <form action="guardar.php" method="POST">
+      <div class="escala">
+        <!-- Radio buttons con etiquetas -->
+        <input type="radio" id="v0" name="puntaje" value="0" required><label for="v0" class="rojo">0</label>
+        <input type="radio" id="v1" name="puntaje" value="1"><label for="v1" class="rojo">1</label>
+        <input type="radio" id="v2" name="puntaje" value="2"><label for="v2" class="rojo">2</label>
+        <input type="radio" id="v3" name="puntaje" value="3"><label for="v3" class="rojo">3</label>
+        <input type="radio" id="v4" name="puntaje" value="4"><label for="v4" class="rojo">4</label>
+        <input type="radio" id="v5" name="puntaje" value="5"><label for="v5" class="rojo">5</label>
+        <input type="radio" id="v6" name="puntaje" value="6"><label for="v6" class="rojo">6</label>
+        <input type="radio" id="v7" name="puntaje" value="7"><label for="v7" class="naranja">7</label>
+        <input type="radio" id="v8" name="puntaje" value="8"><label for="v8" class="amarillo">8</label>
+        <input type="radio" id="v9" name="puntaje" value="9"><label for="v9" class="verde">9</label>
+        <input type="radio" id="v10" name="puntaje" value="10"><label for="v10" class="verde">10</label>
+      </div>
+
+      <div class="etiquetas">
+        <span>Completamente insatisfecho</span>
+        <span>Completamente satisfecho</span>
+      </div>
+
+      <textarea name="comentario" placeholder="¿Quieres dejar un comentario? (opcional)"></textarea>
+
+      <button type="submit">Enviar respuesta</button>
+    </form>
+  </div>
+
+</body>
+</html>
