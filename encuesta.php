@@ -1,11 +1,7 @@
 <?php
 session_start();
 require 'db_config.php';
-
- $_SESSION['user_id'] = $_POST['user_id'] ?? null; // Obtener el ID del usuario de la sesión o del formulario
-
-
-
+echo "<h2>Bienvenido, " . htmlspecialchars($_SESSION['correo']) . "</h2>";
 ?>
 <!DOCTYPE html>
 <html lang="es">
